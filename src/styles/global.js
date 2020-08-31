@@ -12,7 +12,7 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  p, button, input, h1, h2, h3 {
+  p, button, input, h1, h2, h3, li, a {
     color: #000;
 	  font-family: 'Nunito';
   }

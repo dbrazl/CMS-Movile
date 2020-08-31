@@ -20,6 +20,10 @@ export default function user(state = INITIAL_STATE, action) {
         draft.profile = action.payload.body;
         break;
 
+      case '@auth/CLOSE_SESSION':
+        draft.profile = {};
+        break;
+
       default:
         break;
     }

@@ -35,8 +35,12 @@ export default function auth(state = INITIAL_STATE, action) {
       case '@auth/SESSION_OPERATION_FAIL':
         draft.status.loading = false;
         draft.error.status = true;
-        draft.error.message = action.payload.error.message;
-        draft.error.reasons = action.payload.error.reasons;
+        draft.error.message = action.payload.message;
+        draft.error.reasons = action.payload.reasons;
+        break;
+
+      case '@auth/RESET_ERROR':
+        draft.error = INITIAL_STATE.error;
         break;
 
       default:

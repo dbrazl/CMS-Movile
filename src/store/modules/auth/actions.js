@@ -24,3 +24,9 @@ export function sessionOperationFail(message, reasons) {
     payload: { message, reasons },
   };
 }
+
+export function resetError() {
+  return {
+    type: '@auth/RESET_ERROR',
+  };
+}

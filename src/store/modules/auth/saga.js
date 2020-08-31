@@ -16,7 +16,11 @@ function* createSession({ payload }) {
       timeout: call(timer),
     });
 
+    const { token } = response.data;
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+
     yield put(createSessionSuccess(response.data));
+    history.push('/sells');
   } catch (error) {
     yield errorHandler(error, sessionOperationFail);
   }

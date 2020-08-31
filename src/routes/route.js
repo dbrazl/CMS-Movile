@@ -13,6 +13,8 @@ export default function RouteWrapper({
 
   if (!signed && isPrivate) return <Redirect to="/" />;
 
+  if (signed && !isPrivate) return <Redirect to="/sells" />;
+
   return <Route {...rest} render={props => <Component {...props} />} />;
 }
 
